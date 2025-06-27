@@ -61,13 +61,13 @@
         }
 
         .logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 32px;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 40px;
             background: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
         }
 
         .logo img {
@@ -90,17 +90,6 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .beta-badge {
-            display: inline-block;
-            background: #adb0ef;
-            color: #4708bd;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 24px;
         }
 
         /* CTA Button */
@@ -174,7 +163,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            padding: 12px;
+        }
+
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(12%) sepia(78%) saturate(6841%) hue-rotate(252deg) brightness(95%) contrast(106%);
         }
 
         .feature-card h3 {
@@ -331,10 +327,9 @@
                 <div class="logo">
                     <img src="./assets/Housemate-Logo.png" alt="Housemate Logo">
                 </div>
-                <div class="beta-badge">🚀 Now in Beta</div>
                 <h1>Housemate</h1>
                 <p class="tagline">The easiest way to coordinate chores, groceries, and quiet time with your housemates</p>
-                <a href="#signup" class="cta-button">Join the Beta</a>
+                <a href="https://forms.gle/M7a4PVHn64R7WA5K9" target="_blank" class="cta-button">Join the Beta</a>
             </div>
         </div>
     </section>
@@ -347,19 +342,25 @@
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🏠</div>
+                    <div class="feature-icon">
+                        <img src="./assets/chore.png" alt="Chore Management">
+                    </div>
                     <h3>Chore Management</h3>
                     <p>Assign, track, and complete household chores with ease. No more arguments about who's turn it is to do dishes!</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🛒</div>
+                    <div class="feature-icon">
+                        <img src="./assets/grocery.png" alt="Shared Grocery Lists">
+                    </div>
                     <h3>Shared Grocery Lists</h3>
                     <p>Collaborate on grocery shopping with real-time shared lists. Never forget the milk again!</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🤫</div>
+                    <div class="feature-icon">
+                        <img src="./assets/quietTime.png" alt="Quiet Time Coordination">
+                    </div>
                     <h3>Quiet Time Coordination</h3>
                     <p>Schedule and respect each other's quiet time for studying, work calls, or just some peace and quiet.</p>
                 </div>
@@ -385,11 +386,6 @@
                 <div class="beta-feature">
                     <h4>💬 Direct Feedback</h4>
                     <p>Your feedback directly influences new features and improvements</p>
-                </div>
-                
-                <div class="beta-feature">
-                    <h4>🎁 Beta Rewards</h4>
-                    <p>Exclusive perks and potential premium features for free</p>
                 </div>
                 
                 <div class="beta-feature">
