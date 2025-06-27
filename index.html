@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housemate - Join the Beta</title>
+    <meta name="description" content="Join the Housemate beta and revolutionize how you manage your shared living space. Coordinate chores, groceries, and quiet time with your housemates.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/Housemate-Logo.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #4708bd 0%, #6200ea 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(174, 176, 239, 0.1);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 32px;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .beta-badge {
+            display: inline-block;
+            background: #adb0ef;
+            color: #4708bd;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #4708bd;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f6f6f6;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #4708bd;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #8C8D8B;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px;
+            background: #adb0ef;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: #4708bd;
+        }
+
+        .feature-card p {
+            color: #8C8D8B;
+            line-height: 1.6;
+        }
+
+        /* Beta Section */
+        .beta-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .beta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            color: #4708bd;
+        }
+
+        .beta-description {
+            font-size: 1.2rem;
+            color: #8C8D8B;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+        }
+
+        .beta-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin: 48px 0;
+        }
+
+        .beta-feature {
+            padding: 24px;
+            background: #f6f6f6;
+            border-radius: 8px;
+        }
+
+        .beta-feature h4 {
+            color: #4708bd;
+            margin-bottom: 12px;
+        }
+
+        /* Form Section */
+        .signup-section {
+            background: linear-gradient(135deg, #4708bd 0%, #6200ea 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .signup-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .submit-button {
+            background: white;
+            color: #4708bd;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #000000;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #8C8D8B;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .feature-card {
+                padding: 24px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./assets/Housemate-Logo.png" alt="Housemate Logo">
+                </div>
+                <div class="beta-badge">🚀 Now in Beta</div>
+                <h1>Housemate</h1>
+                <p class="tagline">The easiest way to coordinate chores, groceries, and quiet time with your housemates</p>
+                <a href="#signup" class="cta-button">Join the Beta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Housemate?</h2>
+            <p class="features-subtitle">Transform your shared living experience with smart coordination tools</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Chore Management</h3>
+                    <p>Assign, track, and complete household chores with ease. No more arguments about who's turn it is to do dishes!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛒</div>
+                    <h3>Shared Grocery Lists</h3>
+                    <p>Collaborate on grocery shopping with real-time shared lists. Never forget the milk again!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤫</div>
+                    <h3>Quiet Time Coordination</h3>
+                    <p>Schedule and respect each other's quiet time for studying, work calls, or just some peace and quiet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beta Section -->
+    <section class="beta-section">
+        <div class="container">
+            <h2>Join Our Beta Program</h2>
+            <p class="beta-description">
+                Be among the first to experience Housemate and help shape the future of shared living. 
+                As a beta tester, you'll get early access to new features and direct input on the app's development.
+            </p>
+            
+            <div class="beta-features">
+                <div class="beta-feature">
+                    <h4>🎯 Early Access</h4>
+                    <p>Get the app before anyone else and try cutting-edge features first</p>
+                </div>
+                
+                <div class="beta-feature">
+                    <h4>💬 Direct Feedback</h4>
+                    <p>Your feedback directly influences new features and improvements</p>
+                </div>
+                
+                <div class="beta-feature">
+                    <h4>🎁 Beta Rewards</h4>
+                    <p>Exclusive perks and potential premium features for free</p>
+                </div>
+                
+                <div class="beta-feature">
+                    <h4>👥 Community</h4>
+                    <p>Join our exclusive beta community and connect with other testers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signup Form -->
+    <section class="signup-section" id="signup">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p style="margin-bottom: 40px; font-size: 1.2rem;">Sign up for beta access and we'll notify you as soon as it's available!</p>
+            
+            <!-- 
+            🔧 GOOGLE FORM SETUP INSTRUCTIONS:
+            1. Go to forms.google.com and create a new form
+            2. Add these fields:
+               - Full Name (Short answer)
+               - Email Address (Short answer)
+               - Preferred Platform (Multiple choice: iOS, Android, Both)
+               - Number of Housemates (Multiple choice: 1, 2-3, 4-5, 6+)
+            3. Click "Send" button in top right
+            4. Click the link icon (<>)
+            5. Copy the form URL and replace "YOUR_GOOGLE_FORM_URL_HERE" below
+            -->
+            
+            <div class="signup-form">
+                <a href="YOUR_GOOGLE_FORM_URL_HERE" 
+                   target="_blank" 
+                   class="submit-button" 
+                   style="display: inline-block; text-decoration: none; text-align: center;">
+                    Join the Beta Waitlist
+                </a>
+                
+                <p style="margin-top: 16px; font-size: 0.9rem; opacity: 0.8;">
+                    Opens in a new tab • Takes less than 30 seconds
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Housemate. Built with ❤️ for better shared living.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
